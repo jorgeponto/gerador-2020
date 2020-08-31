@@ -1,0 +1,457 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; 
+    color:#333333;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+h2 {
+	font-size: 1.8rem;
+    font-weight: 600;
+	margin-bottom: 30px;
+}
+h3 {
+	margin-bottom: 30px;
+}
+small {
+    line-height: 1.2rem;
+    display: block;
+}
+#top-bar2 .title h1, #top-bar2 .title a {
+    font-size: 26px; 
+	    font-weight: normal;
+}
+
+#content-gerador {
+	background-color: #e4e4e4;
+	padding: 70px 0;
+}
+
+.title_description {
+	max-width: 490px;
+	margin-top: 5px;
+}
+
+#title_description_small {
+	display: block;
+}
+
+.tab-passos  a {
+	text-decoration:underline;
+}
+
+
+.tab-container {
+	background-color: #ffffff;
+	display:table;
+	width:100%
+}
+.tab-menu {
+	background-color: #f1f1f1;
+	display:table-cell; 
+	vertical-align:top; 
+	width:30%
+}
+.tab-menu ol {
+    list-style: none;
+    padding: 30px 40px;
+}
+
+
+.tab-menu li {
+	padding: 20px 20px 0px 0;
+    margin: 0px 0px 0px 0;
+	border-right: 5px solid #f1f1f1;
+}
+.tab-menu li.selected{
+	border-right: 5px solid #333399;
+}
+.tab-menu li a {
+	font-weight: 600;
+    font-size: 1.1rem;
+}
+li.separador  {
+	border-right: none!important;
+	padding-right: 0;
+}
+.separador hr {    
+	border-bottom: 1px solid #d8d8d8!important;
+}
+
+.button-group-left {
+    float: left;
+}
+.button-group-right {
+    text-align: right;
+}
+
+.tab-menu a li[aria-selected="true"]{
+	border-bottom: 4px solid #333399;
+}
+.tab-menu span {
+    font-weight: 400;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.mexe {
+	background-color:tomato;
+}
+.naomexe {
+	
+	background-color:none;
+}
+
+.tab-passos {
+	display:table-cell; 
+	vertical-align:top; 
+	width:70%;
+	padding: 45px 55px;
+}
+.instrucoes1 {
+	background-color: pink;
+}
+.instrucoes2 {
+	display:none;
+}
+.page.create.gerador {
+    padding: 30px 0 30px 0 !important;
+}
+.gerador hr {
+	border: 0px;
+	border-bottom: 1px solid #333333;
+	margin: 20px 0 !important;
+}
+.tab-menu hr {
+	border: 0px;
+	border-bottom: 1px solid #d8d8d8;
+	margin: 0 !important;
+}
+
+
+#toucheading {
+	display: none;
+}
+
+
+#accstatement {
+	max-width: 1336px;
+	margin: auto;
+
+	
+}
+
+
+
+.tab-passos summary h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+	background-color: #333333;
+	padding: 8px 10px;
+	color:#ffffff;
+	display:inline-block; 
+}
+.tab-passos h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+	display: block;
+}
+.tab-passos input,.tab-passos input:focus, .tab-passos select, .tab-passos textarea,.field input, .field select, .field textarea {
+    height: 40px;
+    border: 2px solid #333399!important;
+    background-color: #ffffff;
+    margin: 10px 10px 10px 0;
+    min-width: 50px;
+    padding: 0px 10px;
+}
+.tab-passos li {
+	margin-bottom: 10px;
+}
+#instrucoes-tab ol {
+	list-style: none;
+	margin-left: 0.5em;
+	counter-reset: line;
+}
+#instrucoes-tab ol > li {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+#instrucoes-tab ol > li:before {
+    position: absolute;
+    left: -3em;
+    top: -3px;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    margin-right: 0.5em;
+    background-color: #e4e4e4;
+    border-radius: 50%;
+    color: #333333;
+    text-align: center;
+    line-height: 2em;
+    counter-increment: line;
+    content: counter(line);
+	font-weight:600;
+}
+
+.field input, .field select, .field textarea {
+	display: block;
+    /*margin: 0 0 20px 0;*/
+}
+.field textarea {
+	min-height: 100px
+}
+.field.line p , .field.proto p, #accstmnt_assessment_with_users_1 {
+	font-size: 1.1rem;
+	padding-top: 30px;
+}
+.radio-field input, .radio-field input:focus {
+	height: 20px;
+	display: inline;
+	vertical-align: sub;
+    -webkit-appearance: auto;
+}
+
+#entity-target-url, #entity-target-name {
+	min-width: 60%;
+}
+
+#passo3-tab .field.line, #passo4-tab .field.line {
+	padding: 0 30px 20px 30px;
+	margin: 0 0 10px 0;
+}
+
+#passo3-tab fieldset .field input, .field select, .field textarea, #passo4-tab fieldset .field input, .field select, .field textarea {
+	margin: 0 0 20px 0;
+}
+#passo3-tab .field.line.extra, #passo4-tab .field.line.extra {
+	background-color:#f1f1f1;
+}
+label[for^="accstmnt_assessment_with_users"], label[for^="accstmnt_orginfo_contact_"] {
+	font-size: 1.1rem!important;
+}
+
+
+.formgerador100 {
+	width: 100%;
+	color:#333333;
+}
+.formgerador50 {
+	width: 50%;
+	min-width:200px;
+}
+.formgerador10 {
+	width: 10%;
+	min-width: 100px;
+}
+
+.previous-next {
+	font-size: 14px;
+	color: #333333;
+	line-height: 24px;
+}
+/*
+.previous-page h2, .next-page h2{
+	font-size: 18px;
+	color: #333333;
+	line-height: 24px;
+	font-weight: bold;
+	margin: 0!important;
+}*/
+
+.previous-page h3, .next-page h3{
+	font-size: 18px;
+	color: #333399;
+	line-height: 24px;
+	font-weight: bold;
+	margin: 0!important;
+	display: inline-block;
+}
+
+.previous-page h5:hover, .next-page h5:hover{
+	text-decoration: underline;
+}
+
+.next-page{
+	text-align: right;
+}
+
+.tutorial-pagination{
+	/*padding-top: 50px !important;
+	padding-bottom: 75px !important;*/
+}
+
+.tutorial-pagination a{
+	padding-top: 50px !important;
+	background: none;
+	text-decoration:none;
+}
+.tutorial-pagination a:hover{
+	text-decoration:underline;
+}
+
+
+
+.btn_tutorial{
+	display: inline-flex;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	width: auto;
+	height: 50px;
+	border-radius: 30px;
+	background-color: #333399;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 30px 0px 30px;
+	border: 2px solid #333399;
+	text-decoration:none!important;
+}
+.btn_tutorial_gray{
+	background-color: #e4e4e4;
+	color: #333399;
+	border: 2px solid #e4e4e4;
+}
+.btn_tutorial span{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+.btn_tutorial:hover{
+	cursor: pointer;animation-name: btn_hover;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;  
+	text-decoration:underline!important;
+}
+.btn_tutorial .icon-button-list{
+	display: flex;
+}
+
+
+.add-line, .remove-line{
+	display: inline-flex;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	width: auto;
+	height: 50px;
+	border-radius: 30px;
+	background-color: #e4e4e4;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 30px 0px 30px;
+	border: 2px solid #e4e4e4;
+	margin-left: 0px!important;
+}
+.add-line{
+	color: #333399;
+}
+.remove-line{
+	color: #8e0d0d;
+}
+
+
+/*
+.icon-content-menu-up:before {
+    content: none;
+}
+.tab-menu ul { 
+	list-style: none;
+}
+.tab-passos .seccao {
+    font-size: 1.2rem;
+    font-weight: 700;
+	background-color: black;
+	padding: 0 10px;
+	color:yellow;
+}
+.tab-passos p {
+    font-size: 1.6rem;
+}
+.tab-passos  {
+	font-size: 1.1rem;
+}
+
+.listssa li:before {
+    content: '';
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    left: -27px;
+    top: 10px;
+    z-index: -1;
+    border-radius: 50%;
+    margin-right: -20px;
+    background-color: #e4e4e4;
+}
+*/
+
+
+@media (max-width: 1260px) {
+	.button-group-right {
+		clear: both;
+		text-align: left;
+	}
+	.button-group-right .btn_tutorial {
+		margin-top: 0px;
+	}
+}
+@media (max-width: 1262px) and (min-width: 992px) {
+
+	.title_description {
+		display: none!important;
+	}
+
+	#title_description_small {
+		display: block!important;
+	    max-width: 100%;
+	    padding-left: 0px!important;
+	}
+	#top-bar2 .title_description {
+		padding-left: 0px !important;
+	}
+}
+
+@media (max-width: 991px) {
+	#top-bar2 #site_title a, #top-bar2 #site_title h1 {
+		line-height: 1.2;
+	}
+}
+
+
+@media only screen and (max-width: 990px) {
+	
+	body {
+	}
+	.tab-menu {
+		display:block; 
+		vertical-align:top; 
+		width:100%
+	}
+	#tab-menu {
+		display:none; 
+	}
+
+	#content-gerador { 
+		padding-right: 30px !important;
+    	padding-left: 30px !important;
+	}
+
+	#toucheading {
+		display: block;
+		background-color: #f1f1f1;
+    	padding: 10px 20px;
+    	    font-size: 1.1rem;
+    	    color:	#333399;
+	}
+	
+	
+}
