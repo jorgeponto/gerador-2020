@@ -1077,7 +1077,7 @@
     request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {
         var type = request.getResponseHeader('Content-Type');
-        if (type === 'text/html') {
+        if (type.includes('text/html')) {
           var domparser = new DOMParser();
           var doc = domparser.parseFromString(request.responseText, 'text/html');
           _parseDoc(doc);
