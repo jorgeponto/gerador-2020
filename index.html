@@ -827,6 +827,7 @@
                           data-action="load_from_html"
                           id="fileLoadButton"
                           class="btn_tutorial btn_tutorial_gray"
+                          title="Carregar declaração a partir de um ficheiro"
                         >
                           Carregar ficheiro
                         </button>
@@ -841,6 +842,7 @@
                           data-action="load_from_url"
                           id="urlLoadButton"
                           class="btn_tutorial btn_tutorial_gray"
+                          title="Carregar declaração a partir de um endereço Web"
                         >
                           Carregar URL
                         </button>
@@ -1250,7 +1252,7 @@
 
                     <p>
                       De acordo com a alínea a) do n.º 1 do art. 9º do
-                      Decreto-lei n.º 83/2018 este tipo de análise é obrigatório
+                      Decreto-lei n.º 83/2018 este tipo de análise é obrigatória
                       e deve ser realizada de acordo com determinadas condições.
                     </p>
 
@@ -1509,7 +1511,7 @@
                     </h3>
                     <p>
                       De acordo com a alínea b) do n.º 1 do art. 9º do
-                      Decreto-lei n.º 83/2018 este tipo de análise é obrigatório
+                      Decreto-lei n.º 83/2018 este tipo de análise é obrigatória
                       e deve ser efetuada de acordo com determinadas condições.
                     </p>
 
@@ -1527,8 +1529,9 @@
                         Efetuou algum tipo de avaliação manual com base nas
                         <a
                           href="https://amagovpt.github.io/kit-selo/checklists/"
-                          >checklists de verificação disponíveis no github da
-                          AMA</a
+                          target="_blank"
+                          >checklists de verificação (disponíveis no GitHub da
+                          AMA; abre numa nova janela)</a
                         >?
                       </legend>
                       <select id="accstmnt_manual">
@@ -1542,7 +1545,7 @@
                         Se levou a efeito uma avaliação manual de acordo com a
                         lista de verificação referenciada em
                         <a
-                          href="https://selo.usabilidade.gov.pt/prata.html#dezrequisitos"
+                          href="https://amagovpt.github.io/kit-selo/checklists/checklist-10aspetos.html"
                           >10 aspetos críticos de acessibilidade</a
                         >, inclua o resultado (do total das heurísticas
                         aplicáveis, quantas é que são satisfeitas) e uma
@@ -1685,6 +1688,7 @@
                             >
                             <input
                               type="url"
+                              class="formgerador100"
                               id="accstmnt_assessment_with_manual_address_[n]"
                               name="accstmnt_assessment_with_manual_data"
                               required
@@ -1890,26 +1894,25 @@
                             <label for="accstmnt_assessment_with_users_tasks_1"
                               >Tarefas/Processo</label
                             >
-                            <input
-                              type="text"
+                            <textarea
                               class="formgerador100"
                               id="accstmnt_assessment_with_users_tasks_1"
                               name="accstmnt_assessment_with_users_data"
+                              rows="3"
                               required
-                            />
+                            ></textarea>
                           </div>
                           <div class="field">
                             <label
                               for="accstmnt_assessment_with_users_results_1"
                               >Principais resultados (sumário):</label
                             >
-                            <input
-                              type="text"
+                            <textarea
                               class="formgerador100"
                               id="accstmnt_assessment_with_users_results_1"
                               name="accstmnt_assessment_with_users_data"
                               required
-                            />
+                            ></textarea>
                           </div>
                         </div>
 
@@ -1976,26 +1979,25 @@
                               for="accstmnt_assessment_with_users_tasks_[n]"
                               >Tarefas/Processo</label
                             >
-                            <input
-                              type="text"
+                            <textarea
                               class="formgerador100"
                               id="accstmnt_assessment_with_users_tasks_[n]"
                               name="accstmnt_assessment_with_users_data"
+                              rows="2"
                               required
-                            />
+                            ></textarea>
                           </div>
                           <div class="field">
                             <label
                               for="accstmnt_assessment_with_users_results_[n]"
                               >Principais resultados (sumário):</label
                             >
-                            <input
-                              type="text"
+                            <textarea
                               class="formgerador100"
                               id="accstmnt_assessment_with_users_results_[n]"
                               name="accstmnt_assessment_with_users_data"
                               required
-                            />
+                            ></textarea>
                           </div>
                           <button type="button" class="remove-line">
                             Remover avaliação com utilizadores
@@ -2762,8 +2764,9 @@
                   <p>
                     A presente Declaração de Acessibilidade e Usabilidade foi
                     criada com o auxílio do
-                    <a href="#">Gerador WAI-Tools PT v1.5</a>, desenvolvido no
-                    âmbito do projeto
+                    <a href="https://www.acessibilidade.gov.pt/gerador"
+                      >Gerador WAI-Tools PT v1.5</a
+                    >, desenvolvido no âmbito do projeto
                     <a href="https://w3.org/WAI/Tools">WAI-Tools</a>, de cujo
                     consórcio a AMA é parte integrante. A Declaração foi
                     concebida em conformidade com o DL n.º 83/2018, de 19 de
