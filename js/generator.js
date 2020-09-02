@@ -27,6 +27,8 @@
 
   var isDateSupported = true;
 
+  var fetchServer = "http://127.0.0.1:3001/?url=";
+
   /**
    * statementForm module
    * ---
@@ -211,12 +213,12 @@
 
       // Update name of entity on the form
       if (target.id && target.id === 'entity-gender') {
-        Array.prototype.forEach.call(document.getElementsByName('entity_article'), function updateArticle(el) {
+        Array.prototype.forEach.call(document.querySelectorAll("span.entity_article"), function updateArticle(el) {
           el.innerHTML = target.value.toLowerCase();
         });
       }
       if (target.id && target.id === 'entity-name') {
-        Array.prototype.forEach.call(document.getElementsByName('entity_description'), function updateName(el) {
+        Array.prototype.forEach.call(document.querySelectorAll("span.entity_description"), function updateName(el) {
           el.innerHTML = target.value;
         });
       }
@@ -224,17 +226,17 @@
       // Handle select box for type of target: website or app
       if (target.id && target.id === 'entity-target') {
         if (target.value === "website") {
-          Array.prototype.forEach.call(document.getElementsByName('entity-target-website'), function showWebsite(el) {
+          Array.prototype.forEach.call(document.querySelectorAll("span.entity-target-website"), function showWebsite(el) {
             el.removeAttribute('hidden');
           });
-          Array.prototype.forEach.call(document.getElementsByName('entity-target-app'), function hideApp(el) {
+          Array.prototype.forEach.call(document.querySelectorAll("span.entity-target-app"), function hideApp(el) {
             el.setAttribute('hidden', '');
           });
         } else if (target.value === "app") {
-          Array.prototype.forEach.call(document.getElementsByName('entity-target-website'), function hideWebsite(el) {
+          Array.prototype.forEach.call(document.querySelectorAll("span.entity-target-website"), function hideWebsite(el) {
             el.setAttribute('hidden', '');
           });
-          Array.prototype.forEach.call(document.getElementsByName('entity-target-app'), function showApp(el) {
+          Array.prototype.forEach.call(document.querySelectorAll("span.entity-target-app"), function showApp(el) {
             el.removeAttribute('hidden');
           });
         }
@@ -251,7 +253,7 @@
             el.removeAttribute('hidden');
           });
         }
-        Array.prototype.forEach.call(document.getElementsByName('conformance-output'), function updateConformanceOutput(el) {
+        Array.prototype.forEach.call(document.querySelectorAll("span.conformance-output"), function updateConformanceOutput(el) {
           if (target.value === "full") {
             el.innerHTML = "plenamente conforme";
           } else if (target.value === "partial") {
@@ -580,29 +582,29 @@
     // Print formdata into printables: [data-print]
     _printFormInput();
 
-    Array.prototype.forEach.call(document.getElementsByName('target-type'), function updateTarget(el) {
+    Array.prototype.forEach.call(document.querySelectorAll("span.target-type"), function updateTarget(el) {
       if (document.getElementById('entity-target').value === "website") {
-        if (el.getAttribute('class') !== null && el.getAttribute('class').indexOf('capFL') !== -1) {
+        if ((el.getAttribute('class') !== null && el.getAttribute('class').indexOf('capFL') !== -1) || (el.parentNode.getAttribute('class') !== null && el.parentNode.getAttribute('class').indexOf('capFL') !== -1)) {
           el.innerHTML = "O sítio Web";
         } else {
           el.innerHTML = "o sítio Web";
         }
       } else if (document.getElementById('entity-target').value === "app") {
-        if (el.getAttribute('class') !== null && el.getAttribute('class').indexOf('capFL') === -1) {
+        if ((el.getAttribute('class') !== null && el.getAttribute('class').indexOf('capFL') === -1) || (el.parentNode.getAttribute('class') !== null && el.parentNode.getAttribute('class').indexOf('capFL') === -1)) {
           el.innerHTML = "A aplicação móvel";
         } else {
           el.innerHTML = "a aplicação móvel";
         }
       }
     });
-    Array.prototype.forEach.call(document.getElementsByName('target-name'), function updateTargetName(el) {
+    Array.prototype.forEach.call(document.querySelectorAll("span.target-name"), function updateTargetName(el) {
       if (document.getElementById('entity-target').value === "website") {
         el.innerHTML = document.getElementById('entity-target-name').value;
       } else if (document.getElementById('entity-target').value === "app") {
         el.innerHTML = document.getElementById('entity-target-app-name').value;
       }
     });
-    Array.prototype.forEach.call(document.getElementsByName('siteurl'), function updateSiteURL(el) {
+    Array.prototype.forEach.call(document.querySelectorAll("a.siteurl"), function updateSiteURL(el) {
       if (document.getElementById('entity-target').value === "website") {
         el.setAttribute('href', document.getElementById('entity-target-url').value);
       } else {
@@ -730,7 +732,7 @@
           default:
             if (item.id === "accstmnt_assessment_with_tools_summary" && printData) {
               var printDataSize = printData.length;
-              if (printDataSize !== 6) {
+              if ((printDataSize === 0) || ((printDataSize % 6) !== 0)) {
                 outHTML = "<p>Todos os campos relativos à avaliação automática devem ser preenchidos.</p>";
               } else {
                 var counter = 0;
@@ -746,9 +748,6 @@
                     var s_title = printData[counter];
                     counter++;
                     var s_url = printData[counter];
-                    if (!s_url.match(/^[a-zA-Z]+:\/\//)) {
-                      s_url = 'http://' + s_url;
-                    }
                     outHTML += " Relatório: <a href='" + s_url + "'>" + s_title + "</a>";
                     counter++;
                   }
@@ -773,7 +772,7 @@
             }
             else if (item.id === "accstmnt_assessment_with_manual_summary" && printData) {
               var printDataSize = printData.length;
-              if (printDataSize !== 6) {
+              if ((printDataSize === 0) || ((printDataSize % 6) !== 0)) {
                 outHTML = "<p>Todos os campos relativos à avaliação manual devem ser preenchidos.</p>";
               }
               else {
@@ -790,9 +789,6 @@
                     var s_title = printData[counter];
                     counter++;
                     var s_url = printData[counter];
-                    if (!s_url.match(/^[a-zA-Z]+:\/\//)) {
-                      s_url = 'http://' + s_url;
-                    }
                     outHTML += " Relatório: <a href='" + s_url + "'>" + s_title + "</a>";
                     counter++;
                   }
@@ -817,7 +813,7 @@
             }
             else if (item.id === "accstmnt_assessment_with_users_summary" && printData) {
               var printDataSize = printData.length;
-              if (printDataSize !== 6) {
+              if ((printDataSize === 0) || ((printDataSize % 6) !== 0)) {
                 outHTML = "<p>Todos os campos relativos à avaliação com utilizadores devem ser preenchidos.</p>";
               }
               else {
@@ -834,9 +830,6 @@
                     var s_title = printData[counter];
                     counter++;
                     var s_url = printData[counter];
-                    if (!s_url.match(/^[a-zA-Z]+:\/\//)) {
-                      s_url = 'http://' + s_url;
-                    }
                     outHTML += " Relatório: <a href='" + s_url + "'>" + s_title + "</a>";
                     counter++;
                   }
@@ -885,11 +878,12 @@
                 outHTML = "";
               }
               if (printData !== "no") {
+                outHTML = "<p>";
                 if (document.getElementById('entity-target').value === "website") {
-                  outHTML = "O sítio Web ";
+                  outHTML += "O sítio Web ";
                   outHTML += document.getElementById('entity-target-name').value;
                 } else if (document.getElementById('entity-target').value === "app") {
-                  outHTML = "A aplicação móvel ";
+                  outHTML += "A aplicação móvel ";
                   outHTML += document.getElementById('entity-target-app-name').value;
                 }
                 outHTML += " d";
@@ -911,7 +905,7 @@
                   outHTML += document.getElementById('entity-target-app-name').value;
                 }
                 outHTML += ":";
-                outHTML += '<span class="mr mr-seal-checks">';
+                outHTML += "</p>"
                 outHTML += "<ul>";
                 outHTML += '<li>passa a checklist “Conteúdos”</li>';
                 outHTML += "<li>passa a bateria de testes de acessibilidade de uma ferramenta de validação automática comummente utilizada no mercado para a conformidade ‘AA’</li>";
@@ -924,9 +918,7 @@
                 outHTML += '<li>foi alvo de testes de usabilidade com utilizadores reais, nomeadamente com utilizadores com deficiência</li>';
                 outHTML += "</ul>";
               }
-              if (printData !== "no") {
-                outHTML += '</span>';
-              }
+
               item.innerHTML = outHTML;
             }
             else if (item.id === "accstmnt_seal_summary_empty" && printData) {
@@ -953,13 +945,18 @@
         case 'html':
           // Prepare statement data
           var generatedStatementMarkup = _getGeneratedStatement();
+          var finalStatementMarkup = _prepareStatement(generatedStatementMarkup);
           // Then use save function with data
-          saver.saveAs(generatedStatementMarkup, filetype);
+          saver.saveAs(finalStatementMarkup, filetype);
           break;
         default:
 
       }
     }
+  }
+
+  function _prepareStatement(statementMarkup) {
+    return statementMarkup.replace(/article/g, 'div');
   }
 
   function _getGeneratedStatement() {
@@ -995,6 +992,9 @@
           element.innerHTML = divChild.innerHTML;
           if (divChild.classList.length > 0) {
             element.classList = divChild.classList;
+          }
+          if ((divChild.nodeName === "H2") && (typeof divChild.id != 'undefined')) {
+            element.id = divChild.id;
           }
           fragment.appendChild(element);
         });
@@ -1066,17 +1066,18 @@
 
   function _loadFormURL() {
     // get the url
-    var url = window.prompt("Introduza o URL da declaração a ler.\n\nATENÇÃO: Esta funcionalidade só funciona se a declaração estiver no mesmo servidor onde esta página está a ser consultada ou se o servidor estiver configurado para responder com os cabeçalhos CORS que permitam a consulta de materiais a partir de domínios diferentes.", "http");
+    var url = window.prompt("Introduza o URL da declaração a ler.", "http");
     if (url === undefined || url === '')
       return;
 
     // get doc from url and parse doc
+    var serviceUrl = fetchServer + url;
     var request = new XMLHttpRequest();
-    request.open("GET", url);
+    request.open("GET", serviceUrl);
     request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {
         var type = request.getResponseHeader('Content-Type');
-        if (type === 'text/html') {
+        if (type.includes('text/html')) {
           var domparser = new DOMParser();
           var doc = domparser.parseFromString(request.responseText, 'text/html');
           _parseDoc(doc);
@@ -1158,7 +1159,8 @@
   }
 
   function _parseAnchorElem(savedDoc, mrName, formName) {
-    var mrElem = savedDoc.getElementsByName(mrName)[0];
+    var className = "a." + mrName;
+    var mrElem = savedDoc.querySelector(className);
     if (mrElem) {
       var elem = mrElem.getAttribute('href');
       var fElem = document.getElementById(formName);
@@ -1171,7 +1173,7 @@
   function _parseList(savedDoc, mrName, formName) {
     var mrElem = savedDoc.getElementsByClassName(mrName)[0];
     if (mrElem) {
-      var list = mrElem.firstElementChild.querySelectorAll('li');
+      var list = mrElem.querySelectorAll('li');
       for (var i = 0; i < list.length; i++) {
         if (i > 0) {
           var button = document.getElementById(formName + 'button');
@@ -1190,8 +1192,8 @@
   function _parseDList(savedDoc, mrName, formName) {
     var mrElem = savedDoc.getElementsByClassName(mrName)[0];
     if (mrElem) {
-      var dtlist = mrElem.firstElementChild.querySelectorAll('dt');
-      var ddlist = mrElem.firstElementChild.querySelectorAll('dd');
+      var dtlist = mrElem.querySelectorAll('dt');
+      var ddlist = mrElem.querySelectorAll('dd');
       for (var i = 0; i < dtlist.length; i++) {
         if (i > 0) {
           var button = document.getElementById(formName + 'button');
@@ -1231,7 +1233,7 @@
       var select = document.getElementById('accstmnt_tools');
       select.value = 'yes';
       select.dispatchEvent(event);
-      var list = mrElem.firstElementChild.firstElementChild.childNodes;
+      var list = mrElem.firstElementChild.childNodes;
       var firstNode = true;
       var elemNum = 1;
       for (var i = 0; i < list.length; i++) {
@@ -1329,7 +1331,7 @@
       var select = document.getElementById('accstmnt_manual');
       select.value = 'yes';
       select.dispatchEvent(event);
-      var list = mrElem.firstElementChild.firstElementChild.childNodes;
+      var list = mrElem.firstElementChild.childNodes;
       var firstNode = true;
       var elemNum = 1;
       for (var i = 0; i < list.length; i++) {
@@ -1423,7 +1425,7 @@
       var select = document.getElementById('accstmnt_users');
       select.value = 'yes';
       select.dispatchEvent(event);
-      var list = mrElem.firstElementChild.firstElementChild.childNodes;
+      var list = mrElem.firstElementChild.childNodes;
       var firstNode = true;
       var elemNum = 1;
       for (var i = 0; i < list.length; i++) {
