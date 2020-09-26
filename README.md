@@ -1,6 +1,6 @@
 # gerador / <em lang="en">Generator</em>
 
-[português](#pt-PT) | [english](en)
+[português](#pt-PT) | [english](#en)
 
 <div id="pt-PT" lang="pt-PT">
 
