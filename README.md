@@ -39,7 +39,7 @@ Generator of Accessibility and Usability Statement
 
 ## Installing the Accessibility Statement Generator
 
-Copy all files, except those inside the `server` folder, to the Web server that will serve the Generator.
+Copy all the files, except those inside the `server` folder, to the Web server that will serve the Generator.
 
 In the `js / generator.js` file, update the` fetchServer` variable to point to the address where the accessibility statement loading service is available from a URL.
 
