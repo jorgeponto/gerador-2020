@@ -1,4 +1,11 @@
-# gerador
+# gerador / <em lang="en">Generator</em>
+
+[português](#pt-PT) | [english](#en)
+
+<div id="pt-PT" lang="pt-PT">
+
+<abbr title="versão portuguesa">pt-PT</abbr>
+
  Gerador da Declaração de Acessibilidade e Usabilidade
 
 ## Instalação do Gerador de Declarações de Acessibilidade 
@@ -20,3 +27,37 @@ Executar o serviço correndo
 ```
 node server.js
 ```
+</div>
+
+---
+
+<div id="en" lang="en">
+ 
+ <abbr title="English version">EN</abbr>
+
+Generator of Accessibility and Usability Statement
+
+## Installing the Accessibility Statement Generator
+
+Copy all the files, except those inside the `server` folder, to the Web server that will serve the Generator.
+
+In the `js / generator.js` file, update the` fetchServer` variable to point to the address where the accessibility statement loading service is available from a URL.
+
+## Installation of the service to obtain the accessibility statement from a URL
+
+Copy the file `server / server.js` to the location where this service will be executed.
+
+In the `server / server.js` file set the value of the constants:
+- `hostname`: service address (must match the one indicated in` fetchServer` in the generator)
+- `port`: service port (must match the one indicated in` fetchServer` in the generator)
+- `origin`: address (including port if necessary) of the machine where the Generator is made available (where requests for this service come from)
+
+Run the service using the command
+
+```
+node server.js
+```
+
+
+</div>
+ 
