@@ -1,5 +1,9 @@
 # gerador / <em lang="en">Generator</em>
 
+versão 2020 contém:
+- (2019). versão FCUL baseada no estilo, estrutura e componente dinâmica da versão original desenvolvida no projeto WAI-Tools
+- (2020). novo design concebido por AlfaMind para integração no acessibilidade.gov (formulário dividido por páginas)
+
 [português](#pt-PT) | [english](#en)
 
 <div id="pt-PT" lang="pt-PT">
