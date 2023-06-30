@@ -1,4 +1,4 @@
-# gerador / <em lang="en">Generator</em>
+# gerador 20 / <em lang="en">Generator 20</em>
 
 versão 2020 contém:
 - (2019). versão FCUL baseada no estilo, estrutura e componente dinâmica da versão original desenvolvida no projeto WAI-Tools
